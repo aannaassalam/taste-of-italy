@@ -41,10 +41,10 @@ const getTextColor = screen => {
 };
 
 const Tab = ({route, index, state, descriptors, navigation}) => {
-  const [startingWidth, setStartingWidth] = useState(55);
-  const [fullWidth, setFullWidth] = useState(120);
+  const [startingWidth, setStartingWidth] = useState(normalize(55));
+  const [fullWidth, setFullWidth] = useState(normalize(120));
   const animatedWidth = useRef(new Animated.Value(startingWidth)).current;
-  const animatedOpacity = useRef(new Animated.Value(0)).current;
+  const animatedOpacity = new Animated.Value(0);
 
   const isFocused = state.index === index;
 
@@ -55,20 +55,20 @@ const Tab = ({route, index, state, descriptors, navigation}) => {
       friction: 100,
       toValue: isFocused ? fullWidth : startingWidth,
       useNativeDriver: false,
-    }).start();
-
-    Animated.timing(animatedOpacity, {
-      toValue: 1,
-      duration: 1000,
-      delay: 50,
-      useNativeDriver: true,
-    }).start();
+    }).start(() => {
+      Animated.timing(animatedOpacity, {
+        toValue: 1,
+        duration: 300,
+        // delay: 50,
+        useNativeDriver: true,
+      }).start();
+    });
   }, [isFocused]);
 
   const onTextLayout = e => {
     let {x, y, width, height} = e.nativeEvent.layout;
-    console.log(width + 40, startingWidth);
-    width = Math.ceil(width);
+    console.log(width, startingWidth);
+    width = Math.ceil(width + startingWidth);
     if (width > startingWidth) {
       setFullWidth(width);
     }
@@ -95,8 +95,8 @@ const Tab = ({route, index, state, descriptors, navigation}) => {
 
   return (
     // <View key={index}>
-    <Pressable onPress={onPress}>
-      <View style={styles.innerItemContainer} onLayout={e => onTextLayout(e)}>
+    <Pressable onPress={onPress} onLayout={e => onTextLayout(e, label)}>
+      <View style={styles.innerItemContainer}>
         <Animated.View
           style={[
             styles.mainItemContainer(isFocused, label),
@@ -107,8 +107,11 @@ const Tab = ({route, index, state, descriptors, navigation}) => {
             <Animated.Text
               style={[
                 styles.tab_text(isFocused, label),
-                {opacity: animatedOpacity},
-              ]}>
+                {
+                  // opacity: animatedOpacity,
+                },
+              ]}
+              numberOfLines={1}>
               {label}
             </Animated.Text>
           )}
@@ -143,7 +146,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: normalize(10),
+    paddingHorizontal: normalize(15),
     // gap: normalize(5),
   },
   mainItemContainer: (isFocused, label) => ({
@@ -154,12 +157,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: normalize(5),
+    overflow: 'hidden',
   }),
   innerItemContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: normalize(5),
-    overflow: 'hidden',
+    // overflow: 'hidden',
     // flex: 1,
   },
   tab_text: (isFocused, label) => ({
