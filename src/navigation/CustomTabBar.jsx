@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {
   Dimensions,
   Pressable,
@@ -42,22 +42,32 @@ const getTextColor = screen => {
 
 const Tab = ({route, index, state, descriptors, navigation}) => {
   const [startingWidth, setStartingWidth] = useState(55);
-  const [fullWidth, setFullWidth] = useState(110);
+  const [fullWidth, setFullWidth] = useState(120);
   const animatedWidth = useRef(new Animated.Value(startingWidth)).current;
+  const animatedOpacity = useRef(new Animated.Value(0)).current;
 
   const isFocused = state.index === index;
 
   useEffect(() => {
     // expanded?setText(props.text): setText(props.text.substring(0, 40));
+    console.log(isFocused, route.name);
     Animated.spring(animatedWidth, {
       friction: 100,
       toValue: isFocused ? fullWidth : startingWidth,
       useNativeDriver: false,
     }).start();
+
+    Animated.timing(animatedOpacity, {
+      toValue: 1,
+      duration: 1000,
+      delay: 50,
+      useNativeDriver: true,
+    }).start();
   }, [isFocused]);
 
   const onTextLayout = e => {
     let {x, y, width, height} = e.nativeEvent.layout;
+    console.log(width + 40, startingWidth);
     width = Math.ceil(width);
     if (width > startingWidth) {
       setFullWidth(width);
@@ -78,8 +88,6 @@ const Tab = ({route, index, state, descriptors, navigation}) => {
       target: route.key,
     });
 
-    console.log('click');
-
     if (!isFocused && !event.defaultPrevented) {
       navigation.navigate(route.name);
     }
@@ -87,18 +95,25 @@ const Tab = ({route, index, state, descriptors, navigation}) => {
 
   return (
     // <View key={index}>
-    <Pressable onPress={() => console.log('click')}>
-      <Animated.View
-        style={[
-          styles.mainItemContainer(isFocused, label),
-          {width: animatedWidth},
-        ]}
-        onLayout={e => onTextLayout(e)}>
-        <NavigationIcon route={label} isFocused={isFocused} />
-        {isFocused && (
-          <Text style={styles.tab_text(isFocused, label)}>{label}</Text>
-        )}
-      </Animated.View>
+    <Pressable onPress={onPress}>
+      <View style={styles.innerItemContainer} onLayout={e => onTextLayout(e)}>
+        <Animated.View
+          style={[
+            styles.mainItemContainer(isFocused, label),
+            {width: animatedWidth},
+          ]}>
+          <NavigationIcon route={label} isFocused={isFocused} />
+          {isFocused && (
+            <Animated.Text
+              style={[
+                styles.tab_text(isFocused, label),
+                {opacity: animatedOpacity},
+              ]}>
+              {label}
+            </Animated.Text>
+          )}
+        </Animated.View>
+      </View>
     </Pressable>
     // </View>
   );
@@ -140,6 +155,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: normalize(5),
   }),
+  innerItemContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: normalize(5),
+    overflow: 'hidden',
+    // flex: 1,
+  },
   tab_text: (isFocused, label) => ({
     fontSize: normalize(12),
     fontWeight: '500',
