@@ -12,9 +12,21 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		158C04A1445749229A461B88 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B003146510DD417BA90EBE65 /* Lato-Bold.ttf */; };
+		2533B23E985A419F84762DEE /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1FAB1C83ADE64723A0EA8341 /* Lato-Regular.ttf */; };
+		507BE1C1B5004BBF9F7EC029 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 529D3434542C48BBB9482503 /* Montserrat-Bold.ttf */; };
+		529E822AC1F7431984496D56 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CFAC2C093F1B4C77841F0BAA /* Montserrat-Regular.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-TasteOfItaly-TasteOfItalyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-TasteOfItaly-TasteOfItalyTests.a */; };
+		7B746BE6911E4BBDAAD85C89 /* PlayfairDisplay-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B0B0E1A91724EBEB8259E1A /* PlayfairDisplay-Bold.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		9656CE9D9230020EC094E93A /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 46C00FCA26AA542319F88627 /* PrivacyInfo.xcprivacy */; };
+		AFCDD0F87319402AA7EC2851 /* PlayfairDisplay-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A333C61E097441E98A1ED10 /* PlayfairDisplay-ExtraBold.ttf */; };
+		B53A1A8D90B345BC91C0C145 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F57B43CA6CDD4AB9B7C307E2 /* Montserrat-Medium.ttf */; };
+		BE73AC5B02DC40B889EFF24F /* PlayfairDisplay-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 609DC09C250E456D9E561DDC /* PlayfairDisplay-Regular.ttf */; };
+		C63BAF2E3F0C4D4792649008 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4053864973AD4B549A150DB1 /* Montserrat-SemiBold.ttf */; };
+		C885C64CB02D40159FBFB253 /* PlayfairDisplay-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20A25E37B1514E25A58BCF8E /* PlayfairDisplay-Medium.ttf */; };
+		DA47B788F3CD45DFB6DD2880 /* PlayfairDisplay-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 144D6F5DD6D64E33A7F4CC94 /* PlayfairDisplay-SemiBold.ttf */; };
+		F896CEBC0C3049EF9806892F /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A63A09CA49B34015AE93F3AA /* Lato-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +43,7 @@
 		00E356EE1AD99517003FC87E /* TasteOfItalyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TasteOfItalyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* TasteOfItalyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TasteOfItalyTests.m; sourceTree = "<group>"; };
+		0B0B0E1A91724EBEB8259E1A /* PlayfairDisplay-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "PlayfairDisplay-Bold.ttf"; path = "../src/assets/fonts/PlayfairDisplay-Bold.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* TasteOfItaly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TasteOfItaly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = TasteOfItaly/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = TasteOfItaly/AppDelegate.mm; sourceTree = "<group>"; };
@@ -38,15 +51,26 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = TasteOfItaly/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = TasteOfItaly/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = TasteOfItaly/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		144D6F5DD6D64E33A7F4CC94 /* PlayfairDisplay-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "PlayfairDisplay-SemiBold.ttf"; path = "../src/assets/fonts/PlayfairDisplay-SemiBold.ttf"; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-TasteOfItaly-TasteOfItalyTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TasteOfItaly-TasteOfItalyTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FAB1C83ADE64723A0EA8341 /* Lato-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Regular.ttf"; path = "../src/assets/fonts/Lato-Regular.ttf"; sourceTree = "<group>"; };
+		20A25E37B1514E25A58BCF8E /* PlayfairDisplay-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "PlayfairDisplay-Medium.ttf"; path = "../src/assets/fonts/PlayfairDisplay-Medium.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-TasteOfItaly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TasteOfItaly.debug.xcconfig"; path = "Target Support Files/Pods-TasteOfItaly/Pods-TasteOfItaly.debug.xcconfig"; sourceTree = "<group>"; };
-		46C00FCA26AA542319F88627 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = TasteOfItaly/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		4053864973AD4B549A150DB1 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-SemiBold.ttf"; path = "../src/assets/fonts/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		46C00FCA26AA542319F88627 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = TasteOfItaly/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		529D3434542C48BBB9482503 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Bold.ttf"; path = "../src/assets/fonts/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-TasteOfItaly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TasteOfItaly.release.xcconfig"; path = "Target Support Files/Pods-TasteOfItaly/Pods-TasteOfItaly.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-TasteOfItaly-TasteOfItalyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TasteOfItaly-TasteOfItalyTests.debug.xcconfig"; path = "Target Support Files/Pods-TasteOfItaly-TasteOfItalyTests/Pods-TasteOfItaly-TasteOfItalyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-TasteOfItaly.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TasteOfItaly.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		609DC09C250E456D9E561DDC /* PlayfairDisplay-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "PlayfairDisplay-Regular.ttf"; path = "../src/assets/fonts/PlayfairDisplay-Regular.ttf"; sourceTree = "<group>"; };
+		7A333C61E097441E98A1ED10 /* PlayfairDisplay-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "PlayfairDisplay-ExtraBold.ttf"; path = "../src/assets/fonts/PlayfairDisplay-ExtraBold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = TasteOfItaly/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-TasteOfItaly-TasteOfItalyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TasteOfItaly-TasteOfItalyTests.release.xcconfig"; path = "Target Support Files/Pods-TasteOfItaly-TasteOfItalyTests/Pods-TasteOfItaly-TasteOfItalyTests.release.xcconfig"; sourceTree = "<group>"; };
+		A63A09CA49B34015AE93F3AA /* Lato-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Light.ttf"; path = "../src/assets/fonts/Lato-Light.ttf"; sourceTree = "<group>"; };
+		B003146510DD417BA90EBE65 /* Lato-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Bold.ttf"; path = "../src/assets/fonts/Lato-Bold.ttf"; sourceTree = "<group>"; };
+		CFAC2C093F1B4C77841F0BAA /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Regular.ttf"; path = "../src/assets/fonts/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F57B43CA6CDD4AB9B7C307E2 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Montserrat-Medium.ttf"; path = "../src/assets/fonts/Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +151,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				D895232E14BD4C38A34C5D85 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -151,6 +176,25 @@
 				89C6BE57DB24E9ADA2F236DE /* Pods-TasteOfItaly-TasteOfItalyTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D895232E14BD4C38A34C5D85 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B003146510DD417BA90EBE65 /* Lato-Bold.ttf */,
+				A63A09CA49B34015AE93F3AA /* Lato-Light.ttf */,
+				1FAB1C83ADE64723A0EA8341 /* Lato-Regular.ttf */,
+				529D3434542C48BBB9482503 /* Montserrat-Bold.ttf */,
+				F57B43CA6CDD4AB9B7C307E2 /* Montserrat-Medium.ttf */,
+				CFAC2C093F1B4C77841F0BAA /* Montserrat-Regular.ttf */,
+				4053864973AD4B549A150DB1 /* Montserrat-SemiBold.ttf */,
+				0B0B0E1A91724EBEB8259E1A /* PlayfairDisplay-Bold.ttf */,
+				7A333C61E097441E98A1ED10 /* PlayfairDisplay-ExtraBold.ttf */,
+				20A25E37B1514E25A58BCF8E /* PlayfairDisplay-Medium.ttf */,
+				609DC09C250E456D9E561DDC /* PlayfairDisplay-Regular.ttf */,
+				144D6F5DD6D64E33A7F4CC94 /* PlayfairDisplay-SemiBold.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +293,18 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				9656CE9D9230020EC094E93A /* PrivacyInfo.xcprivacy in Resources */,
+				158C04A1445749229A461B88 /* Lato-Bold.ttf in Resources */,
+				F896CEBC0C3049EF9806892F /* Lato-Light.ttf in Resources */,
+				2533B23E985A419F84762DEE /* Lato-Regular.ttf in Resources */,
+				507BE1C1B5004BBF9F7EC029 /* Montserrat-Bold.ttf in Resources */,
+				B53A1A8D90B345BC91C0C145 /* Montserrat-Medium.ttf in Resources */,
+				529E822AC1F7431984496D56 /* Montserrat-Regular.ttf in Resources */,
+				C63BAF2E3F0C4D4792649008 /* Montserrat-SemiBold.ttf in Resources */,
+				7B746BE6911E4BBDAAD85C89 /* PlayfairDisplay-Bold.ttf in Resources */,
+				AFCDD0F87319402AA7EC2851 /* PlayfairDisplay-ExtraBold.ttf in Resources */,
+				C885C64CB02D40159FBFB253 /* PlayfairDisplay-Medium.ttf in Resources */,
+				BE73AC5B02DC40B889EFF24F /* PlayfairDisplay-Regular.ttf in Resources */,
+				DA47B788F3CD45DFB6DD2880 /* PlayfairDisplay-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,9 +527,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4JT4H946JV;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = TasteOfItaly/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -484,8 +544,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.TasteOfItaly2.com;
 				PRODUCT_NAME = TasteOfItaly;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -498,8 +559,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4JT4H946JV;
 				INFOPLIST_FILE = TasteOfItaly/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -510,8 +575,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.TasteOfItaly2.com;
 				PRODUCT_NAME = TasteOfItaly;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -590,10 +656,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
@@ -665,10 +728,7 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;
