@@ -6,6 +6,7 @@ export const Icons = {
   location: require('../assets/images/location.png'),
   user: require('../assets/images/user.png'),
   takeaway: require('../assets/images/takeaway.png'),
+  mobile: require('../assets/images/mobile.png'),
 };
 
 export const Images = {

@@ -31,7 +31,7 @@ export default function BottomTab() {
       <Tab.Screen name="Dine In" component={DineIn} />
       <Tab.Screen name="Take Away" component={TakeAway} />
       <Tab.Screen name="Location" component={Location} />
-      <Tab.Screen name="Account" component={Account} />
+      {/* <Tab.Screen name="Account" component={Account} /> */}
     </Tab.Navigator>
   );
 }
