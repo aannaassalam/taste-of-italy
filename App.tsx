@@ -7,14 +7,21 @@
 
 import {NavigationContainer} from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
-import {useColorScheme} from 'react-native';
+import {Platform, useColorScheme} from 'react-native';
 
 import BottomTab from './src/navigation/BottomTab';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
-import {SplashScreen} from './src/screens/SplashScreen';
+import {SplashScreen as LocalSplashScreen} from './src/screens/SplashScreen';
+import SplashScreen from 'react-native-splash-screen';
 
 function App() {
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (Platform.OS === 'android') {
+      SplashScreen.hide();
+    }
+  }, []);
 
   useEffect(() => {
     setTimeout(() => {
@@ -24,11 +31,11 @@ function App() {
 
   return (
     <GestureHandlerRootView>
-      <SplashScreen isAppReady={!loading}>
+      <LocalSplashScreen isAppReady={!loading}>
         <NavigationContainer>
           <BottomTab />
         </NavigationContainer>
-      </SplashScreen>
+      </LocalSplashScreen>
     </GestureHandlerRootView>
   );
 }

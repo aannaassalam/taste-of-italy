@@ -20,7 +20,7 @@ export default function CustomHeader({state, descriptors, navigators}) {
       <TouchableOpacity
         style={styles.callingButton}
         onPress={() => {
-          Linking.openURL('tel:094973172');
+          Linking.openURL('tel:0894973172');
         }}>
         <Image
           source={Icons.mobile}

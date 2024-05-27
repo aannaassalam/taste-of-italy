@@ -15,6 +15,13 @@ import {Fonts} from '../themes/ImagePath';
 import MapView, {Marker} from 'react-native-maps';
 
 export default function Location() {
+  const region = {
+    latitude: -32.1446029784763,
+    longitude: 116.00788250833857,
+    latitudeDelta: 0.0043,
+    longitudeDelta: 0.0034,
+  };
+
   const onCall = () => {
     Linking.openURL('tel:094973172');
   };
@@ -83,16 +90,10 @@ export default function Location() {
             // marginHorizontal: normalize(20),
           }}
           provider="google"
-          region={{
-            latitude: -32.1446029784763,
-            longitude: 116.00788250833857,
-            latitudeDelta: 0.025,
-            longitudeDelta: 0.0,
-          }}
+          region={region}
           loadingEnabled
-          // loadingIndicatorColor="#666666"
-          // loadingBackgroundColor="#eeeeee"
-        >
+          loadingIndicatorColor="#666666"
+          loadingBackgroundColor="#eeeeee">
           <Marker
             coordinate={{
               latitude: -32.1446029784763,
