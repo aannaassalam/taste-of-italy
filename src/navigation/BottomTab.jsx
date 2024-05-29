@@ -28,8 +28,19 @@ export default function BottomTab() {
           }
         }
       />
-      <Tab.Screen name="Dine In" component={DineIn} />
-      <Tab.Screen name="Take Away" component={TakeAway} />
+      <Tab.Screen
+        name="Dine In"
+        component={DineIn}
+        listeners={{
+          tabPress: navigation => {
+            // console.log(navigation, two);
+            // navigation.jumpTo('Dine In', {
+            //   x: 'y',
+            // });
+          },
+        }}
+      />
+      <Tab.Screen name="Takeaway" component={TakeAway} />
       <Tab.Screen name="Location" component={Location} />
       {/* <Tab.Screen name="Account" component={Account} /> */}
     </Tab.Navigator>

@@ -29,99 +29,16 @@ export default function TakeAway({navigation}) {
   const [index, setIndex] = useState(0);
   const [url, setUrl] = useState('');
   const [loading, setLoading] = useState(false);
+  const [headingWidth, setHeadingWidth] = useState(null);
   const ref = useRef(null);
 
-  const pickUp = async () => {
-    try {
-      const url =
-        'https://bopple.app/taste-of-italy-pizzeria-e-ristorante/menu?qr&order_type=COLLECT';
-      if (await InAppBrowser.isAvailable()) {
-        const result = await InAppBrowser.open(url, {
-          // iOS Properties
-          dismissButtonStyle: 'cancel',
-          preferredBarTintColor: '#333333',
-          preferredControlTintColor: 'white',
-          readerMode: false,
-          animated: true,
-          modalPresentationStyle: 'fullScreen',
-          modalTransitionStyle: 'coverVertical',
-          modalEnabled: true,
-          enableBarCollapsing: false,
-          // Android Properties
-          showTitle: true,
-          toolbarColor: '#333333',
-          secondaryToolbarColor: 'black',
-          navigationBarColor: 'black',
-          navigationBarDividerColor: 'white',
-          enableUrlBarHiding: true,
-          enableDefaultShare: true,
-          forceCloseOnRedirection: false,
-          // Specify full animation resource identifier(package:anim/name)
-          // or only resource name(in case of animation bundled with app).
-          animations: {
-            startEnter: 'slide_in_right',
-            startExit: 'slide_out_left',
-            endEnter: 'slide_in_left',
-            endExit: 'slide_out_right',
-          },
-        });
-        // await sleep(800);
-        navigation.navigate('Take Away');
-        //   Alert.alert(JSON.stringify(result))
-      } else {
-        Linking.openURL(url);
-      }
-    } catch (error) {
-      console.log(error.message);
-      // Alert.alert(error.message)
-    }
-  };
-
-  const delivery = async () => {
-    try {
-      const url =
-        'https://bopple.app/taste-of-italy-pizzeria-e-ristorante/menu?qr&order_type=DELIVER_ADDRESS';
-      if (await InAppBrowser.isAvailable()) {
-        const result = await InAppBrowser.open(url, {
-          // iOS Properties
-          dismissButtonStyle: 'cancel',
-          preferredBarTintColor: '#333333',
-          preferredControlTintColor: 'white',
-          readerMode: false,
-          animated: true,
-          modalPresentationStyle: 'fullScreen',
-          modalTransitionStyle: 'coverVertical',
-          modalEnabled: true,
-          enableBarCollapsing: false,
-          // Android Properties
-          showTitle: true,
-          toolbarColor: '#333333',
-          secondaryToolbarColor: 'black',
-          navigationBarColor: 'black',
-          navigationBarDividerColor: 'white',
-          enableUrlBarHiding: true,
-          enableDefaultShare: true,
-          forceCloseOnRedirection: false,
-          // Specify full animation resource identifier(package:anim/name)
-          // or only resource name(in case of animation bundled with app).
-          animations: {
-            startEnter: 'slide_in_right',
-            startExit: 'slide_out_left',
-            endEnter: 'slide_in_left',
-            endExit: 'slide_out_right',
-          },
-        });
-        // await sleep(800);
-        navigation.navigate('Take Away');
-        //   Alert.alert(JSON.stringify(result))
-      } else {
-        Linking.openURL(url);
-      }
-    } catch (error) {
-      console.log(error.message);
-      // Alert.alert(error.message)
-    }
-  };
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('tabPress', e => {
+      ref.current.expand();
+      setUrl('');
+    });
+    return unsubscribe;
+  }, [navigation]);
 
   useFocusEffect(
     useCallback(() => {
@@ -133,23 +50,25 @@ export default function TakeAway({navigation}) {
   return (
     <View style={styles.container}>
       {Boolean(url) && (
-        <WebView
-          source={{uri: url}}
-          style={{
-            flex: loading ? 0 : 1,
-            marginBottom: normalize(5),
-            backgroundColor: '#000',
-          }}
-          startInLoadingState
-          onLoad={() => setLoading(false)}
-          // injectedJavaScript={
-          //   'document.getElementById("page-container").style.margin="-202px 0 0 0"; document.getElementById("top-header").style.display="none"; document.getElementById("main-header").style.display="none";'
-          // }
-          // onMessage={e => {}}
-          renderLoading={() => null}
-        />
+        <>
+          <WebView
+            source={{uri: url}}
+            style={{
+              flex: loading ? 0 : 1,
+              marginBottom: normalize(5),
+              backgroundColor: '#000',
+            }}
+            startInLoadingState
+            onLoad={() => setLoading(false)}
+            // injectedJavaScript={
+            //   'document.getElementById("page-container").style.margin="-202px 0 0 0"; document.getElementById("top-header").style.display="none"; document.getElementById("main-header").style.display="none";'
+            // }
+            // onMessage={e => {}}
+            renderLoading={() => null}
+          />
+          {loading && <Loader />}
+        </>
       )}
-      {loading && <Loader />}
       <BottomSheet
         index={index}
         snapPoints={snapPoints}
@@ -161,8 +80,17 @@ export default function TakeAway({navigation}) {
         style={{marginHorizontal: normalize(10)}}>
         <BottomSheetView style={styles.contentContainer}>
           <View>
-            <Text style={styles.heading}>TAKEAWAY</Text>
-            <View style={styles.line} />
+            <Text
+              style={styles.heading}
+              onLayout={e => {
+                const {width} = e.nativeEvent.layout;
+                setHeadingWidth(width);
+              }}>
+              TAKEAWAY
+            </Text>
+            <View
+              style={[styles.line, {width: headingWidth || normalize(65)}]}
+            />
           </View>
           <TouchableOpacity
             style={[styles.button]}
@@ -213,7 +141,7 @@ const styles = StyleSheet.create({
     // textDecorationLine: 'underline',
   },
   line: {
-    width: normalize(45),
+    width: normalize(65),
     height: 2,
     backgroundColor: '#333',
     marginBottom: normalize(25),

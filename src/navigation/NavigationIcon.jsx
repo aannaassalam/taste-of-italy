@@ -22,7 +22,7 @@ export default function NavigationIcon({route, isFocused}) {
             style={styles.icon}
           />
         );
-      case 'Take Away':
+      case 'Takeaway':
         return (
           <Image
             source={Icons.takeaway}

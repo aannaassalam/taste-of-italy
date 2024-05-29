@@ -24,12 +24,21 @@ const Loader = () => {
   );
 };
 
-export default function DineIn({navigation}) {
+export default function DineIn({navigation, route}) {
   const snapPoints = ['35%'];
   const [index, setIndex] = useState(0);
   const [url, setUrl] = useState('');
   const [loading, setLoading] = useState(false);
   const ref = useRef(null);
+  const [headingWidth, setHeadingWidth] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('tabPress', e => {
+      ref.current.expand();
+      setUrl('');
+    });
+    return unsubscribe;
+  }, [navigation]);
 
   useFocusEffect(
     useCallback(() => {
@@ -41,23 +50,25 @@ export default function DineIn({navigation}) {
   return (
     <View style={styles.container}>
       {Boolean(url) && (
-        <WebView
-          source={{uri: url}}
-          style={{
-            flex: loading ? 0 : 1,
-            marginBottom: normalize(5),
-            backgroundColor: '#000',
-          }}
-          startInLoadingState
-          onLoad={() => setLoading(false)}
-          // injectedJavaScript={
-          //   'document.getElementById("page-container").style.margin="-202px 0 0 0"; document.getElementById("top-header").style.display="none"; document.getElementById("main-header").style.display="none";'
-          // }
-          // onMessage={e => {}}
-          renderLoading={() => null}
-        />
+        <>
+          <WebView
+            source={{uri: url}}
+            style={{
+              flex: loading ? 0 : 1,
+              marginBottom: normalize(5),
+              backgroundColor: '#000',
+            }}
+            startInLoadingState
+            onLoad={() => setLoading(false)}
+            // injectedJavaScript={
+            //   'document.getElementById("page-container").style.margin="-202px 0 0 0"; document.getElementById("top-header").style.display="none"; document.getElementById("main-header").style.display="none";'
+            // }
+            // onMessage={e => {}}
+            renderLoading={() => null}
+          />
+          {loading && <Loader />}
+        </>
       )}
-      {loading && <Loader />}
       {/* <Loader /> */}
       <BottomSheet
         index={index}
@@ -70,8 +81,22 @@ export default function DineIn({navigation}) {
         style={{marginHorizontal: normalize(10)}}>
         <BottomSheetView style={styles.contentContainer}>
           <View>
-            <Text style={styles.heading}>DINE IN</Text>
-            <View style={styles.line} />
+            <Text
+              style={styles.heading}
+              onLayout={e => {
+                const {width} = e.nativeEvent.layout;
+                setHeadingWidth(width);
+              }}>
+              DINE IN
+            </Text>
+            <View
+              style={[
+                styles.line,
+                {
+                  width: headingWidth || normalize(45),
+                },
+              ]}
+            />
           </View>
           <TouchableOpacity
             style={[styles.button]}

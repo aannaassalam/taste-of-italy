@@ -76,8 +76,8 @@ const Tab = ({route, index, state, descriptors, navigation}) => {
       case 'Dine In':
         width = normalize(103);
         break;
-      case 'Take Away':
-        width = normalize(125);
+      case 'Takeaway':
+        width = normalize(110);
         break;
       case 'Location':
         width = normalize(110);

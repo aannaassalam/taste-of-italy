@@ -16,14 +16,20 @@ import MapView, {Marker} from 'react-native-maps';
 
 export default function Location() {
   const region = {
-    latitude: -32.1446029784763,
-    longitude: 116.00788250833857,
+    latitude: -32.1538017,
+    longitude: 116.0071384,
     latitudeDelta: 0.0043,
     longitudeDelta: 0.0034,
   };
 
   const onCall = () => {
     Linking.openURL('tel:094973172');
+  };
+
+  const getDirections = () => {
+    Linking.openURL(
+      'https://www.google.com/maps/dir//Taste+of+Italy+Pizzeria+e+Ristorante,+8%2F50+Forrest+Rd,+Armadale+WA+6112,+Australia/@-32.1538017,116.0071384,18z/data=!4m8!4m7!1m0!1m5!1m1!1s0x2a3293990ffe9171:0x9ac13e84fac29185!2m2!1d116.0075392!2d-32.1536452?entry=ttu',
+    );
   };
 
   return (
@@ -78,9 +84,14 @@ export default function Location() {
             <Text style={styles.subtitle}>5:00pm - 9:00pm</Text>
           </View>
         </View>
-        <View style={{marginBottom: normalize(60), alignItems: 'center'}}>
+        <View style={{marginBottom: normalize(10), alignItems: 'center'}}>
           <TouchableOpacity style={styles.button} onPress={onCall}>
             <Text style={styles.buttonText}>Call: 9497 3172</Text>
+          </TouchableOpacity>
+        </View>
+        <View style={{marginBottom: normalize(60), alignItems: 'center'}}>
+          <TouchableOpacity style={styles.button} onPress={getDirections}>
+            <Text style={styles.buttonText}>Get Directions</Text>
           </TouchableOpacity>
         </View>
         <MapView
@@ -93,11 +104,12 @@ export default function Location() {
           region={region}
           loadingEnabled
           loadingIndicatorColor="#666666"
-          loadingBackgroundColor="#eeeeee">
+          loadingBackgroundColor="#eeeeee"
+          scrollEnabled={false}>
           <Marker
             coordinate={{
-              latitude: -32.1446029784763,
-              longitude: 116.00788250833857,
+              latitude: -32.1536517,
+              longitude: 116.0075384,
             }}
             title="Taste of Italy"
           />

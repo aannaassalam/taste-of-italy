@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     flexDirection: 'row',
     gap: normalize(5),
+    alignItems: 'center',
   },
   callingButtonText: {
     fontSize: normalize(14),
