@@ -8,6 +8,7 @@ import Animated, {
   useAnimatedStyle,
 } from 'react-native-reanimated';
 import Carousel from 'react-native-reanimated-carousel';
+import {useHomeContecxt, useHomeContext} from '../../App';
 
 const PAGE_WIDTH = Dimensions.get('screen').width;
 
@@ -29,7 +30,7 @@ const CustomItem = ({index, animationValue, image}) => {
       style={{flex: 1, backgroundColor: '#000', justifyContent: 'flex-start'}}>
       <Image
         key={index}
-        source={image}
+        source={{uri: image}}
         index={index}
         style={{
           borderRadius: 0,
@@ -57,6 +58,7 @@ const CustomItem = ({index, animationValue, image}) => {
 };
 
 export default function Home() {
+  const {homeScreenContents} = useHomeContext();
   const image_array = [
     {
       image: Images.page_one,
@@ -107,13 +109,13 @@ export default function Home() {
         autoPlayInterval={2000}
         style={{width: PAGE_WIDTH, flex: 1, alignItems: 'flex-start'}}
         width={PAGE_WIDTH}
-        data={image_array}
+        data={homeScreenContents}
         renderItem={({item, index, animationValue}) => {
           return (
             <CustomItem
               key={index}
               index={index}
-              image={item.image}
+              image={item.image_portrait}
               animationValue={animationValue}
             />
           );
